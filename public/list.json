@@ -1,17 +1,17 @@
 [
   {
     "id": 0,
-    "info": "hello",
+    "info": "Take out the trash",
     "done": false
   },
   {
     "id": 1,
-    "info": "hello",
+    "info": "Do the dishes",
     "done": false
   },
   {
     "id": 2,
-    "info": "hello",
+    "info": "Mow the lawn",
     "done": true
   }
 ]

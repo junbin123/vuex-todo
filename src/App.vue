@@ -6,7 +6,9 @@
       :value="inputValue"
       @change="handleInputChange"
     ></a-input>
-    <a-button type="primary" @click="addItemToList">添加事项</a-button>
+    <a-button type="primary" @click="addItemToList" id="my_btn"
+      >添加事项</a-button
+    >
     <a-list bordered :dataSource="infoList" class="dt_list">
       <a-list-item slot="renderItem" slot-scope="item">
         <!-- 复选框 -->
@@ -17,15 +19,16 @@
               cbStatusChanged(e, item.id);
             }
           "
-          >{{ item.info }}</a-checkbox
-        >
+          ><s v-if="item.done">{{ item.info }}</s>
+          <span v-else> {{ item.info }}</span>
+        </a-checkbox>
         <!-- 删除链接 -->
         <a slot="actions" @click="removeItemById(item.id)">删除</a>
       </a-list-item>
       <!-- footer 区域 -->
       <div class="footer" slot="footer">
         <!-- 未完成的任务个数 -->
-        <span>{{ unDoneLength }}条剩余</span>
+        <span>{{ unDoneLength }} 条未完成</span>
         <!-- 操作按钮 -->
         <a-button-group>
           <a-button
@@ -100,12 +103,19 @@ export default {
 
 <style>
 #app {
-  padding: 10px;
+  /* padding: 10px; */
+  position: relative;
+  left: 50%;
+  margin-left: -250px;
+  padding-top: 10px;
 }
 #my_ipt {
-  width: 500px;
+  width: 402px;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+#my_btn {
+  margin-top: -2px;
 }
 .dt_list {
   width: 500px;
