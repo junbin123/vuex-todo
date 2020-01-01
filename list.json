@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "info": "Take out the trash",
+    "done": false
+  },
+  {
+    "id": 1,
+    "info": "Do the dishes",
+    "done": false
+  },
+  {
+    "id": 2,
+    "info": "Mow the lawn",
+    "done": true
+  }
+]
